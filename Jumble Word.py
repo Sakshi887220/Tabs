@@ -22,22 +22,20 @@ def shuffler():
     hint_count = 0
 
     # Clear Answer Box
-    entry_answer.delete(0, END)
+    
 
     # Clear Answer Label
-    answer_label.config(text='')
+    
 
     # List of state words
-    states = open('Countries.txt' , 'r').read().splitlines()
+    
 
     # Pick random state from list
-    global word
-    word = choice(states)
+    
     
 
     # Break apart our chosen word
-    break_apart_word = list(word)
-    shuffle(break_apart_word)
+    
     
     # Turn shuffeled List into a word
     global shuffled_word
@@ -50,10 +48,7 @@ def shuffler():
 
 #Create answer Function
 def answer():
-    if word == entry_answer.get():
-        answer_label.config(text="Correct!!")
-    else:
-        answer_label.config(text="Incorrect!!")
+    
 
 # Create Hint Counter
 global hint_count
@@ -79,10 +74,10 @@ entry_answer.pack(pady=20)
 button_frame = Frame(root)
 button_frame.pack(pady=20)
 
-answer_button = Button(button_frame, text="Answer", command=answer)
+answer_button = Button(button_frame, text="Answer", )
 answer_button.grid(row=0, column=0, padx=10)
 
-my_button = Button(button_frame, text="Pick Another Word", command=shuffler)
+my_button = Button(button_frame, text="Pick Another Word",)
 my_button.grid(row=0, column=1, padx=10)
 
 hint_button = Button(button_frame, text="Hint", command=lambda: hint(hint_count))
